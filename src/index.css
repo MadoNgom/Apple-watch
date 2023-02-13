@@ -1,13 +1,170 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	scroll-behavior: smooth;
+}
+img {
+	max-width: 100%;
+}
+.nav {
+	background-color: #fff;
+}
+.nav-link {
+	color: #000;
+	font-size: 1.4rem;
+	text-transform: capitalize;
+	transition: 0.5s;
+	font-weight: 400;
+}
+.nav-link:hover {
+	color: #333;
+	opacity: 0.5;
+}
+.navbar-toggler {
+	border: none;
+}
+.toggle-menu {
+	background-color: transparent;
+	border: none;
+}
+.navbar-brand {
+	color: #222;
+	font-size: 2rem;
+	font-weight: 500;
+}
+p {
+	color: #333;
+}
+/* SECTION STYLING */
+.hero {
+	background-image: url('/public/images/white-gb.jpg');
+	background-size: cover;
+	background-position: left;
+	min-height: 100vh;
+}
+.hero__title {
+	font-size: 2rem;
+	text-transform: capitalize;
+	font-weight: 600;
+}
+.hero__text {
+	color: #000;
+	font-size: 1rem;
+}
+.hero--btn {
+	border-radius: 50px;
+	padding: 1rem 2rem;
+	transition: 0.5s;
+	background-color: #f26a8d;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	opacity: 0;
+	animation-name: btn;
+	animation-duration: 1s;
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes btn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.hero--btn:hover {
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #000;
+	transform: scale(1.1);
+}
+.showcase {
+	background-image: url('/public/images/big-img.jpg');
+
+	background-size: cover;
+	background-position: center;
+	min-height: 100vh;
+}
+
+.card-img-top {
+	aspect-ratio: 16/9;
+	width: 50rem;
+}
+.card-price {
+	color: rgb(67, 65, 65);
+}
+.hero-img {
+	background-image: url('/public/images/hero-img.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	min-height: 100vh;
+}
+
+.no-wrap {
+	white-space: nowrap;
+}
+.box {
+	background-color: #fff;
+	text-align: center;
+}
+footer {
+	background-color: #000;
+}
+footer h3 {
+	text-transform: uppercase;
+}
+footer .nav-link--grey {
+	color: #fff;
+	opacity: 0.4;
+	font-weight: bold;
+	font-size: 0.6rem;
+	margin-left: 0;
+}
+
+.image {
+	animation-name: image;
+	transition: opacity 250ms ease-in-out;
+	animation-duration: 3s;
+	animation-delay: 3s;
+	animation-fill-mode: forwards;
+	opacity: 0;
+}
+.left-content {
+	animation-name: anime;
+	transition: transform 250ms ease-in-out;
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+}
+@keyframes anime {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+@keyframes image {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@media (min-width: 668px) {
+	.box {
+		width: 50%;
+	}
+	.hero__title {
+		font-size: 3.5rem;
+	}
 }
